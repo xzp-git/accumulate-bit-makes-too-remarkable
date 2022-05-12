@@ -1,5 +1,5 @@
 //const { debounce } = require('lodash');
-const debounce = require("./debounce");
+const debounce = require("./src/debounce");
 const start = Date.now();
 function logger(age) {
   console.log(Math.floor((Date.now() - start) / 1000) + "s");
