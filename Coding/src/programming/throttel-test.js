@@ -1,4 +1,4 @@
-const throttle = require("./throttle");
+const throttle = require("./30.throttle");
 const start = Date.now();
 function logger() {
   console.log(Math.floor((Date.now() - start) / 1000) + "s");

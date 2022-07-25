@@ -180,3 +180,15 @@ Person2.prototype.eat = function(){
 let p2 = new Person2({name: "lisi", age: 18, sex: "男"})
 ```
 
+## 7. new 实现
+
+```js
+const _new = (Ctor, ...args) => {
+    if(typeof Ctor !== 'function' || !Ctor.prototype) throw new Error(`${Ctor} is not a constructor`)
+    const newObj = Object.create(Ctor.prototype)
+    let result = Ctor.apply(newObj, args)
+    if(/^(object|function)$/.test(typeof result) && result !== null) return result
+    return newObj
+}
+```
+

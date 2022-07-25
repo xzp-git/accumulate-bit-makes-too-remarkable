@@ -54,3 +54,7 @@ function bit1counts(num) {
 
   return count;
 }
+/**
+ * 10
+ * 1010 & 0110
+ */
