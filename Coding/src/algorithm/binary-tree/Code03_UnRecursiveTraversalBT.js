@@ -57,6 +57,22 @@ function pos(head) {
   }
 }
 
+function level(head) {
+  if (!head) return;
+  const queue = [];
+  queue.push(head);
+  while (queue.length) {
+    const cur = queue.shift();
+    console.log("lev", cur.value);
+    if (cur.left) {
+      queue.push(cur.left);
+    }
+    if (cur.right) {
+      queue.push(cur.right);
+    }
+  }
+}
+
 function main() {
   let head = new Node(1);
   head.left = new Node(2);
@@ -71,6 +87,7 @@ function main() {
   console.log("========");
   pos(head);
   console.log("========");
+  level(head);
 }
 
 main();
