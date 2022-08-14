@@ -60,3 +60,25 @@ let o = new newF(22, 33);
 console.log(o, "ssss");
 let newfA = newF.bind(objA, 22);
 newfA();
+
+Function.prototype.call = function (context, ...args) {
+  const fn = this;
+  const ctx = context || window;
+  const key = Symbol();
+  ctx[key] = fn;
+  let res = ctx[key](...args);
+  delete ctx[key];
+  return res;
+};
+
+Function.prototype.bind = function (context, ...args) {
+  const fn = this;
+  function newFn(...newArgs) {
+    if (this instanceof newFn) {
+      return new newFn(...[...args, ...newArgs]);
+    }
+    return fn.call(context, ...[...args, ...newArgs]);
+  }
+  newFn.prototype = Object.create(fn.prototype);
+  return newFn;
+};
