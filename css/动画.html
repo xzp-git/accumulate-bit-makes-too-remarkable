@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .logo-box {
+        width: 600px;
+        margin: 100px auto;
+        position: relative;
+      }
+      .logo-box div {
+        display: inline-block;
+      }
+      .logo-box .logo-text {
+        font-size: 24px;
+        margin-left: 10px;
+        animation: logoText 1s ease-in 2s;
+        animation-fill-mode: backwards;
+      }
+      .logo1 {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(85, 138, 250);
+        border-radius: 50%;
+        border-top-left-radius: 0%;
+        animation: logo1 1s ease-in 2s;
+        animation-fill-mode: backwards;
+      }
+      .logo2 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        animation: logo2-middle 2s ease-in;
+      }
+      .logo2 span {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(245, 165, 99);
+        border-radius: 50%;
+        animation: logo2-line 2s linear;
+      }
+      @keyframes logo1 {
+        0% {
+          transform: rotate(180deg);
+          opacity: 0;
+        }
+        25% {
+          transform: rotate(135deg);
+          opacity: 0.25;
+        }
+        50% {
+          transform: rotate(90deg);
+          opacity: 0.5;
+        }
+        75% {
+          transform: rotate(45deg);
+          opacity: 0.75;
+        }
+        100% {
+          transform: rotate(0deg);
+          opacity: 1;
+        }
+      }
+      @keyframes logoText {
+        0% {
+          transform: translateX(30px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes logo2-middle {
+        0% {
+          transform: translateY(0);
+        }
+        25% {
+          transform: translateY(-100px);
+        }
+        50% {
+          transform: translateY(0);
+        }
+        75% {
+          transform: translateY(-50px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      @keyframes logo2-line {
+        0% {
+          transform: translateX(200px);
+        }
+        25% {
+          transform: translateX(150px);
+        }
+        50% {
+          transform: translateX(100px);
+        }
+        75% {
+          transform: translateX(50px);
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo-box">
+      <div class="logo1"></div>
+      <div class="logo2"><span></span></div>
+      <div class="logo-text">animation</div>
+      <span>
+        <div>1111111111</div>
+      </span>
+    </div>
+  </body>
+</html>
