@@ -24,6 +24,11 @@ function isPalindrome(head) {
   return true;
 }
 
+/**
+ * o(1)的额外空间复杂度
+ * @param {*} head
+ * @returns
+ */
 function isPalindrome(head) {
   if (!head || !head.next) {
     return true;
