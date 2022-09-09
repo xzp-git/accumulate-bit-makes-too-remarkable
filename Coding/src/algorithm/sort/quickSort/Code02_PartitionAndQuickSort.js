@@ -22,6 +22,7 @@ function netherlandsFlag(arr, L, R) {
     }
   }
   swap(arr, more, R);
+  //由于 最后 r 位置的数 和 大于区第一个数做了交换  所以 more 也算 等于区
   return [less + 1, more];
 }
 function swap(arr, i, j) {
