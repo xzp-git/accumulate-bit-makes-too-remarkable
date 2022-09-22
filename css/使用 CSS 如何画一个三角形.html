@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用 CSS 如何画一个三角形</title>
+    <style>
+      .triangle {
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-bottom-color: rgba(66, 142, 212, 0.4);
+        border-top-color: rgba(66, 142, 212, 0.4);
+        border-bottom-width: 50px;
+      }
+      /* .triangle {
+        margin: 0 auto;
+        width: 50vh;
+        height: 50vh;
+        background-color: aqua;
+        /*
+                画多边形：
+                polygon(x y, x y, ...)
+                一组 x y, 代表一个点
+                x: 往右增加
+                y: 往下增加
+            
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="triangle"></div>
+  </body>
+</html>

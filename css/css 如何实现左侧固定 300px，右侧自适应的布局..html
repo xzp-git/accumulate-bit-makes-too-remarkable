@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css 如何实现左侧固定 300px，右侧自适应的布局</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        background-color: tomato;
+      }
+      /* calc 计算 */
+      /* .left {
+        width: 300px;
+        height: 100%;
+        background-color: thistle;
+        float: left;
+      }
+      .main {
+        width: calc(100% - 300px);
+        height: 100%;
+        background-color: aquamarine;
+        float: left;
+      } */
+
+      /* flex */
+      /* .container {
+        display: flex;
+      }
+      .left {
+        flex-basis: 300px;
+        height: 100%;
+        background-color: thistle;
+        flex-shrink: 0;
+      }
+      .main {
+        flex-grow: 1;
+        background-color: aquamarine;
+      } */
+      /* grid */
+      .container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+      }
+      .left {
+        background-color: thistle;
+      }
+      .main {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left"></div>
+      <div class="main"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>如何使用 css 写一个魔方</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cube {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        perspective: 10000px;
+        transform-style: preserve-3d;
+        transform-origin: center;
+        transform: rotate3d(1, 1, 1, 45deg);
+        background-color: blueviolet;
+      }
+      .layer {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5) 2px, transparent 0),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.5) 2px, transparent 0);
+        background-size: 33.3% 33.3%;
+      }
+      .layer:nth-child(1) {
+        background-color: #2222aadd;
+        transform-origin: center;
+      }
+
+      .layer:nth-child(2) {
+        background-color: #8822a1dd;
+        transform: rotateY(90deg) translate3d(75px, 0px, -75px);
+      }
+      .layer:nth-child(3) {
+        background-color: #458631dd;
+        transform: rotateX(-90deg) translate3d(0, 75px, 75px);
+      }
+
+      .layer:nth-child(4) {
+        background-color: #b3b667dd;
+        transform: rotateY(90deg) translate3d(75px, 0, 75px);
+      }
+
+      .layer:nth-child(5) {
+        background-color: #f99000dd;
+        transform: rotateX(90deg) translate3d(0, -75px, 75px);
+      }
+
+      .layer:nth-child(6) {
+        background-color: #49ff9fdd;
+        transform: rotateX(-180deg) translate3d(0, 0, 150px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+    </div>
+  </body>
+</html>
